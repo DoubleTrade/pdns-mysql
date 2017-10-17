@@ -1,6 +1,7 @@
 #!/bin/bash
 
 MYSQL_SERVER=${MYSQL_SERVER:-mysql}
+MYSQL_PORT=${MYSQL_PORT:-3306}
 MYSQL_SCHEMA=${MYSQL_SCHEMA:-pdns}
 MYSQL_USER=${MYSQL_USER:-pdns}
 MYSQL_PASSWD=${MYSQL_PASSWD:-pdns}
@@ -22,6 +23,7 @@ OPTIONS+="--webserver=yes "
 OPTIONS+="--webserver-address=0.0.0.0 "
 OPTIONS+="--launch=gmysql "
 OPTIONS+="--gmysql-host=${MYSQL_SERVER} "
+OPTIONS+="--gmysql-port=${MYSQL_PORT} "
 OPTIONS+="--gmysql-user=${MYSQL_USER} "
 OPTIONS+="--gmysql-dbname=${MYSQL_SCHEMA} "
 OPTIONS+="--gmysql-password=${MYSQL_PASSWD} "
